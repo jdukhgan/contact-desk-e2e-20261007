@@ -1,0 +1,15 @@
+<!-- @dsCard group="Feedback" height=182 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>DataStates, preview</title></head>
+<body>
+<div class="pv">
+<div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px">
+<div class="box" style="padding:14px 16px;display:flex;flex-direction:column;gap:12px"><span style="font-weight:550">Loading</span><div style="display:flex;gap:10px"><span style="height:10px;width:40%;border-radius:4px;background:var(--raised)"></span><span style="height:10px;width:25%;border-radius:4px;background:var(--raised);margin-left:auto"></span></div><div style="display:flex;gap:10px"><span style="height:10px;width:55%;border-radius:4px;background:var(--raised)"></span><span style="height:10px;width:20%;border-radius:4px;background:var(--raised);margin-left:auto"></span></div><div class="cap" style="margin:0">Skeleton rows at final height. No spinner over content.</div></div>
+<div class="box" style="padding:14px 16px;display:flex;flex-direction:column;gap:10px"><span style="font-weight:550">Empty</span><span style="color:var(--text-2)">No databases on mac-mini.</span><span><span class="b bsm">Create database</span></span><div class="cap" style="margin:0">With an active filter: "No machines match Host: mac-mini" and Clear filter.</div></div>
+<div class="box" style="padding:14px 16px;display:flex;flex-direction:column;gap:10px;border-color:rgba(239,90,76,.35)"><span style="font-weight:550;display:flex;align-items:center;gap:8px"><span class="dot" style="background:var(--down)"></span>Error</span><span style="color:var(--text-2)">Couldn't load machines. The Proxmox API token for ms-a2 expired.</span><span style="display:flex;gap:6px"><span class="b bsm">Renew token</span><span class="b bsm bg">Retry</span></span></div>
+<div class="box" style="padding:14px 16px;display:flex;flex-direction:column;gap:10px"><span style="font-weight:550;display:flex;align-items:center;gap:8px;color:var(--text-2)"><span class="dot" style="box-shadow:inset 0 0 0 1.5px var(--text-3)"></span>Stale</span><span style="color:var(--text-3)">Showing values from 13:56. Rows grey out and keep their age in the header.</span><div class="bar" style="background:repeating-linear-gradient(90deg,var(--line-strong) 0 3px,transparent 3px 6px)"></div></div>
+</div></div>
+<script>/* Static preview: markup uses JLab classes from bundle.css and tokens from tokens.css. */</script>
+</body>
+</html>

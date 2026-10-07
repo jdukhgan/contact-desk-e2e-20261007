@@ -1,0 +1,21 @@
+<!-- @dsCard group="Data display" height=269 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>CapacityBar, preview</title></head>
+<body>
+<div class="pv">
+<div class="sg" style="grid-template-columns:repeat(4,minmax(0,1fr));gap:20px 28px">
+<div><div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:var(--text-3)">Memory</span><span class="mono">61.4 / 128 GiB</span></div><div class="bar" style="margin-top:7px"><i style="width:48%;background:var(--text-2)"></i></div><div class="cap">Normal</div></div>
+<div><div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:var(--text-3)">Memory</span><span class="mono" style="color:var(--degraded)">27.1 / 32 GiB</span></div><div class="bar" style="margin-top:7px"><i style="width:85%;background:var(--degraded)"></i></div><div class="cap">Above 80%</div></div>
+<div><div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:var(--text-3)">Disk</span><span class="mono" style="color:var(--down-text)">97 / 100 GiB</span></div><div class="bar" style="margin-top:7px"><i style="width:97%;background:var(--down)"></i></div><div class="cap">Above 95%</div></div>
+<div style="color:var(--text-3)"><div style="display:flex;justify-content:space-between;font-size:13px"><span>Memory</span><span class="mono">Unknown</span></div><div class="bar" style="margin-top:7px;background:repeating-linear-gradient(90deg,var(--line-strong) 0 3px,transparent 3px 6px)"></div><div class="cap">Stale</div></div>
+</div>
+<div style="grid-column:2;margin-top:24px">
+<div style="display:flex;justify-content:space-between;font-size:13px;color:var(--text-3);margin-bottom:8px"><span>Memory assigned to machines on ms-a2</span><span class="mono">92 of 128 GiB</span></div>
+<div style="display:flex;height:10px;border-radius:3px;overflow:hidden;gap:2px" role="img" aria-label="Allocation by machine"><span style="flex:32;background:var(--series-2)"></span><span style="flex:16;background:var(--series-1)"></span><span style="flex:16;background:var(--series-3)"></span><span style="flex:16;background:var(--series-5)"></span><span style="flex:12;background:var(--series-4)"></span><span style="flex:36;background:var(--line-strong)"></span></div>
+<div style="display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:8px;font-size:13px;color:var(--text-2)"><span style="display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:2px;background:var(--series-2)"></span>hermes-agents 32</span><span style="display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:2px;background:var(--series-1)"></span>db-core 16</span><span style="display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:2px;background:var(--series-3)"></span>dev-main 16</span><span style="display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:2px;background:var(--series-5)"></span>ragflow 16</span><span style="display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:2px;background:var(--series-4)"></span>supabase 12</span><span style="display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:2px;background:var(--line-strong)"></span>Free 36</span></div>
+<div class="cap">Allocation bar: the scale is always the real capacity. Segments use the data series in a fixed order.</div>
+</div></div>
+<script>/* Static preview: markup uses JLab classes from bundle.css and tokens from tokens.css. */</script>
+</body>
+</html>

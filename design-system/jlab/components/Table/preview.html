@@ -1,0 +1,25 @@
+<!-- @dsCard group="Data display" height=362 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Table, preview</title></head>
+<body>
+<div class="pv">
+<div class="box" style="overflow:hidden">
+<div style="display:flex;align-items:center;gap:8px;padding:10px 12px;border-bottom:1px solid var(--line)">
+<div class="inp" style="display:flex;align-items:center;gap:8px;max-width:240px;height:28px;color:var(--text-3)"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="7" cy="7" r="4.5"></circle><path d="M10.5 10.5L14 14"></path></svg>Filter machines</div>
+<span class="b bsm" style="border-style:dashed;color:var(--text-2)">Host: ms-a2<svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M3 3l4 4M7 3l-4 4" stroke="currentColor" stroke-width="1.3"></path></svg></span>
+<span class="b bsm bg">Status</span><span style="margin-left:auto;font-size:13px;color:var(--text-3)">1 selected</span><span class="b bsm">Snapshot</span>
+</div>
+<table style="width:100%;border-collapse:collapse">
+<thead><tr><th class="th" style="width:36px"></th><th class="th" style="color:var(--text)">Name <svg width="9" height="9" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 2v6M2.5 5.5L5 8l2.5-2.5" stroke="currentColor" stroke-width="1.3" fill="none"></path></svg></th><th class="th">Status</th><th class="th">Address</th><th class="th" style="text-align:right">CPU</th><th class="th" style="text-align:right">Memory</th><th class="th" style="width:90px"></th></tr></thead>
+<tbody>
+<tr><td class="td"><span style="width:16px;height:16px;border-radius:4px;box-sizing:border-box;border:1px solid var(--line-heavy);display:inline-block;vertical-align:middle"></span></td><td class="td" style="font-weight:500">db-core</td><td class="td"><span style="display:inline-flex;align-items:center;gap:6px;color:var(--text-2)"><span class="dot" style="background:var(--running)"></span>Running</span></td><td class="td mono">10.0.10.22</td><td class="td mono" style="text-align:right">8%</td><td class="td mono" style="text-align:right">11.2 / 16 GiB</td><td class="td"></td></tr>
+<tr style="background:rgba(122,162,255,.07)"><td class="td"><span style="width:16px;height:16px;border-radius:4px;background:var(--primary);display:inline-flex;align-items:center;justify-content:center;vertical-align:middle"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 5.2l2 2 4-4.4" stroke="var(--primary-text)" stroke-width="1.6" fill="none" stroke-linecap="round"></path></svg></span></td><td class="td" style="font-weight:500">dev-main</td><td class="td"><span style="display:inline-flex;align-items:center;gap:6px;color:var(--text-2)"><span class="dot" style="background:var(--running)"></span>Running</span></td><td class="td mono">10.0.10.21</td><td class="td mono" style="text-align:right">22%</td><td class="td mono" style="text-align:right">9.8 / 16 GiB</td><td class="td"></td></tr>
+<tr style="background:var(--raised)"><td class="td"><span style="width:16px;height:16px;border-radius:4px;box-sizing:border-box;border:1px solid var(--line-heavy);display:inline-block;vertical-align:middle"></span></td><td class="td" style="font-weight:500">hermes-agents</td><td class="td"><span style="display:inline-flex;align-items:center;gap:6px;color:var(--degraded)"><span class="dot" style="background:var(--degraded)"></span>Degraded</span></td><td class="td mono">10.0.10.24</td><td class="td mono" style="text-align:right">71%</td><td class="td mono" style="text-align:right;color:var(--degraded)">27.1 / 32 GiB</td><td class="td" style="text-align:right"><span class="b bsm">Console</span></td></tr>
+<tr><td class="td"><span style="width:16px;height:16px;border-radius:4px;box-sizing:border-box;border:1px solid var(--line-heavy);display:inline-block;vertical-align:middle"></span></td><td class="td" style="font-weight:500;color:var(--text-2)">sandbox-gh</td><td class="td"><span style="display:inline-flex;align-items:center;gap:6px;color:var(--text-3)"><span class="dot" style="box-shadow:inset 0 0 0 1.5px var(--text-3)"></span>Stopped</span></td><td class="td mono" style="color:var(--text-3)">10.0.10.30</td><td class="td" style="text-align:right;color:var(--text-3)">None</td><td class="td" style="text-align:right;color:var(--text-3)">None</td><td class="td"></td></tr>
+</tbody></table>
+<div style="display:flex;align-items:center;gap:8px;padding:10px 12px;font-size:13px;color:var(--text-3)">Rows: default, selected, hover with actions, stopped.<span style="margin-left:auto">4 of 8</span></div>
+</div></div>
+<script>/* Static preview: markup uses JLab classes from bundle.css and tokens from tokens.css. */</script>
+</body>
+</html>

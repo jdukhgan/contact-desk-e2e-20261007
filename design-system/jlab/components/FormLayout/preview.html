@@ -1,0 +1,20 @@
+<!-- @dsCard group="Inputs" height=200 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>FormLayout, preview</title></head>
+<body>
+<div class="pv">
+<div class="box" style="max-width:640px;overflow:hidden">
+<div style="padding:20px 24px;display:flex;flex-direction:column;gap:18px">
+<div style="font-size:16px;font-weight:600">New machine</div>
+<div role="alert" style="border-radius:8px;background:var(--down-bg);border:1px solid rgba(239,90,76,.3);padding:10px 12px"><div style="font-weight:550;color:var(--down-text)">2 fields need attention</div><div style="font-size:13px;margin-top:4px;display:flex;flex-direction:column;gap:2px"><span style="text-decoration:underline;text-underline-offset:3px">Name is already used by another machine</span><span style="text-decoration:underline;text-underline-offset:3px">Memory is more than ms-a2 has free</span></div></div>
+<div><span class="lbl">Name</span><input class="inp" value="dev-main" style="border-color:rgba(239,90,76,.6)"><div style="font-size:13px;color:var(--down-text);margin-top:6px">dev-main already exists on ms-a2. Try dev-main-2.</div></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px"><div><span class="lbl">Host</span><div class="inp" style="display:flex;align-items:center">ms-a2<span style="margin-left:auto"><svg width="12" height="12" viewBox="0 0 12 12" style="color:var(--text-3)" aria-hidden="true"><path d="M3 4.5L6 7.5 9 4.5" stroke="currentColor" stroke-width="1.4" fill="none"></path></svg></span></div></div><div><span class="lbl">Template</span><div class="inp" style="display:flex;align-items:center">Debian 12<span style="margin-left:auto"><svg width="12" height="12" viewBox="0 0 12 12" style="color:var(--text-3)" aria-hidden="true"><path d="M3 4.5L6 7.5 9 4.5" stroke="currentColor" stroke-width="1.4" fill="none"></path></svg></span></div></div></div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px"><div><span class="lbl">CPU cores</span><input class="inp mono" value="4"></div><div><span class="lbl">Memory, GiB</span><input class="inp mono" value="48" style="border-color:rgba(239,90,76,.6)"></div><div><span class="lbl">Disk, GiB</span><input class="inp mono" value="64"></div></div>
+<div style="font-size:13px;color:var(--down-text);margin-top:-10px">ms-a2 has 36 GiB free.</div>
+</div>
+<div style="display:flex;gap:8px;padding:12px 24px;border-top:1px solid var(--line);background:var(--raised)"><span class="b bp">Create machine</span><span class="b bg">Cancel</span><span style="margin-left:auto;font-size:13px;color:var(--text-3);align-self:center">Ready in about 40 s</span></div>
+</div></div>
+<script>/* Static preview: markup uses JLab classes from bundle.css and tokens from tokens.css. */</script>
+</body>
+</html>

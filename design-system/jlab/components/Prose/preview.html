@@ -1,0 +1,16 @@
+<!-- @dsCard group="Foundations" height=182 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Prose, preview</title></head>
+<body>
+<div class="pv">
+<article style="max-width:620px;font-size:16px;line-height:26px">
+<h3 style="font-size:22px;line-height:32px;font-weight:600;letter-spacing:-0.015em;margin:0 0 8px">Restoring db-core from a snapshot</h3>
+<p style="margin:0 0 14px;color:var(--text-2)">Use this when a migration goes wrong on a test database. Restoring replaces the whole machine, so anything written after the snapshot is lost.</p>
+<h4 style="font-size:16px;font-weight:600;margin:24px 0 6px">Before you start</h4>
+<ul style="margin:0 0 14px;padding-left:20px;color:var(--text-2)"><li>Stop supabase so it stops writing to <code class="mono" style="font-size:14px;padding:1px 5px;border-radius:4px;background:var(--hover);color:var(--text)">hermes_memory</code>.</li><li>Check the snapshot date in <a href="#" style="color:var(--text);text-decoration:underline;text-decoration-color:var(--line-heavy);text-underline-offset:3px">Snapshots</a>.</li></ul>
+<p style="margin:0;color:var(--text-2)">Restores take about 4 minutes for the 142 GiB disk.</p>
+</article></div>
+<script>/* Static preview: markup uses JLab classes from bundle.css and tokens from tokens.css. */</script>
+</body>
+</html>

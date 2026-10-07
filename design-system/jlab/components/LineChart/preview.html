@@ -1,0 +1,21 @@
+<!-- @dsCard group="Data display" height=221 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>LineChart, preview</title></head>
+<body>
+<div class="pv">
+<div class="box" style="padding:18px 20px">
+<div style="display:flex;align-items:baseline;gap:10px"><span style="font-weight:600;font-size:16px">CPU, %</span><span style="color:var(--text-3);font-size:13px">hermes-agents</span>
+<span style="margin-left:auto;display:flex;align-items:center;gap:14px;font-size:13px;color:var(--text-2)"><span style="display:flex;align-items:center;gap:6px"><span style="width:12px;height:2px;background:var(--series-1)"></span>CPU</span><span style="display:flex;align-items:center;gap:6px"><span style="width:12px;border-top:1.5px dashed var(--degraded)"></span>Alert at 80%</span><span class="mono" style="color:var(--text-3)">last 6 h</span></span></div>
+<div style="display:flex;gap:10px;margin-top:16px">
+<div class="mono" style="display:flex;flex-direction:column;justify-content:space-between;height:200px;font-size:12px;color:var(--text-3);text-align:right;width:34px"><span>100%</span><span>75</span><span>50</span><span>25</span><span>0</span></div>
+<div style="flex:1;position:relative">
+<svg viewBox="0 0 800 200" preserveAspectRatio="none" style="width:100%;height:200px;display:block" aria-label="CPU between 30 and 74 percent over six hours"><g stroke="var(--line)" stroke-width="1"><path d="M0 .5H800M0 50H800M0 100H800M0 150H800M0 199.5H800"></path></g><path d="M0 40H800" stroke="var(--degraded)" stroke-width="1.2" stroke-dasharray="5 5"></path><rect x="440" y="0" width="140" height="200" fill="var(--info)" opacity=".06"></rect><path d="M0 140 L50 136 L100 138 L150 128 L200 132 L250 120 L300 124 L350 112 L400 116 L450 96 L500 104 L540 76 L560 98 L590 72 L620 92 L660 68 L700 84 L740 78 L800 58" fill="none" stroke="var(--series-1)" stroke-width="2" stroke-linejoin="round"></path><path d="M660 0V200" stroke="var(--line-heavy)" stroke-width="1"></path><circle cx="660" cy="68" r="4" fill="var(--panel)" stroke="var(--series-1)" stroke-width="2"></circle></svg>
+<div style="position:absolute;left:calc(82.5% + 12px);top:28px;background:var(--raised);box-shadow:var(--pop);border-radius:8px;padding:8px 10px;font-size:13px;white-space:nowrap"><div class="mono" style="color:var(--text-3)">13:40</div><div style="display:flex;align-items:center;gap:6px"><span style="width:8px;height:2px;background:var(--series-1)"></span>CPU <span class="mono" style="color:var(--text)">66%</span></div></div>
+</div></div>
+<div class="mono" style="display:flex;justify-content:space-between;font-size:12px;color:var(--text-3);margin:8px 0 0 44px"><span>08:00</span><span>09:00</span><span>10:00</span><span>11:00</span><span>12:00</span><span>13:00</span><span>14:00</span></div>
+<div class="cap">The shaded band shows a drag-to-zoom selection in progress, 11:30 to 12:45.</div>
+</div></div>
+<script>/* Static preview: markup uses JLab classes from bundle.css and tokens from tokens.css. */</script>
+</body>
+</html>

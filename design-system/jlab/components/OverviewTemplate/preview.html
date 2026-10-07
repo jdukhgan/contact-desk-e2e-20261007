@@ -1,0 +1,215 @@
+<!-- @dsCard group="Templates" height=900 width=1440 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>OverviewTemplate, template</title>
+<style>
+.r{--ease:cubic-bezier(.23,1,.32,1);font-family:'Mona Sans',system-ui,sans-serif;color:var(--text);background:var(--bg);font-size:14px;font-weight:450;line-height:22px;font-feature-settings:'tnum';}
+.r ::selection{background:rgba(122,162,255,.3)}
+.r *{scrollbar-width:thin;scrollbar-color:var(--line-strong) transparent}
+.mono{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px}
+.b{font:500 14px 'Mona Sans',sans-serif;height:32px;padding:0 11px;border-radius:7px;border:1px solid var(--line-strong);background:var(--raised);color:var(--text);display:inline-flex;align-items:center;gap:7px;cursor:pointer;white-space:nowrap;transition:transform 160ms var(--ease),background-color 120ms ease}
+.b:active{transform:scale(.97)}
+.b:focus-visible,.nv:focus-visible,.ib:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.bp{background:var(--primary);color:var(--primary-text);border-color:var(--primary)}
+.bg{background:transparent;border-color:transparent;color:var(--text-2)}
+.ib{width:32px;height:32px;border-radius:7px;border:0;background:transparent;color:var(--text-2);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:transform 160ms var(--ease)}
+.ib:active{transform:scale(.94)}
+.nv{display:flex;align-items:center;gap:10px;height:32px;padding:0 8px;border-radius:7px;border:0;background:transparent;color:var(--text-2);font:450 14px 'Mona Sans',sans-serif;width:100%;text-align:left;cursor:pointer;box-sizing:border-box;text-decoration:none}
+.nh{font-size:13px;color:var(--text-3);font-weight:500;padding:16px 8px 4px}
+.sec{font-size:16px;font-weight:600;letter-spacing:-0.005em;margin:0}
+.th{font-size:13px;font-weight:450;color:var(--text-2);text-align:left;padding:0 12px;height:38px;border-bottom:1px solid var(--line);white-space:nowrap}
+.td{padding:0 12px;height:44px;border-bottom:1px solid var(--line);white-space:nowrap}
+.dot{width:8px;height:8px;border-radius:50%;display:inline-block;flex:none}
+.bar{height:4px;border-radius:2px;background:var(--line-strong);position:relative;overflow:hidden}
+.step{display:flex;align-items:center;gap:8px;height:28px;color:var(--text-2);font-size:13px}
+@media (hover:hover) and (pointer:fine){.nv:hover{background:var(--hover);color:var(--text)}.ib:hover{background:var(--hover);color:var(--text)}.b:hover{background:var(--hover)}.bp:hover{opacity:.92;background:var(--primary)}.row:hover{background:var(--raised)}}
+@media (prefers-reduced-motion:reduce){.b,.ib{transition:none}.b:active,.ib:active{transform:none}}
+</style></head>
+<body>
+
+<div class="r " style="min-height:900px;display:flex;flex-direction:column">
+<div style="flex:1;display:flex;flex-wrap:wrap;min-height:0">
+
+<aside aria-label="Navigation" style="flex:0 0 228px;max-width:100%;box-sizing:border-box;padding:10px 10px 12px;display:flex;flex-direction:column">
+<button class="nv" type="button" style="height:36px;color:var(--text);font-weight:600;gap:9px">
+<svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><rect width="22" height="22" rx="6" fill="var(--text)"></rect><path d="M12.5 5.5v7.2a3.3 3.3 0 0 1-6.6 0" stroke="var(--bg)" stroke-width="2.2" fill="none" stroke-linecap="round"></path><circle cx="16" cy="6.5" r="1.9" fill="var(--running)"></circle></svg>
+JLab<svg width="12" height="12" viewBox="0 0 12 12" style="margin-left:auto;color:var(--text-3)" aria-hidden="true"><path d="M3.5 4.5L6 2l2.5 2.5M3.5 7.5L6 10l2.5-2.5" stroke="currentColor" stroke-width="1.3" fill="none"></path></svg></button>
+<button class="nv" type="button" style="margin:8px 0 6px;height:36px;border:1px solid var(--line);background:var(--panel)"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="7" cy="7" r="4.5"></circle><path d="M10.5 10.5L14 14"></path></svg>Search<span class="mono" style="margin-left:auto;font-size:12px;color:var(--text-3)">⌘K</span></button>
+<nav aria-label="Main">
+<a class="nv" href="#" aria-current="page" style="background:var(--hover);color:var(--text)"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="2" width="5" height="5" rx="1.2"></rect><rect x="9" y="2" width="5" height="5" rx="1.2"></rect><rect x="2" y="9" width="5" height="5" rx="1.2"></rect><rect x="9" y="9" width="5" height="5" rx="1.2"></rect></svg>Overview</a>
+<a class="nv" href="#"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="2.5" width="12" height="4.5" rx="1.2"></rect><rect x="2" y="9" width="12" height="4.5" rx="1.2"></rect></svg>Hosts</a>
+<a class="nv" href="#"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="3" width="12" height="9" rx="1.5"></rect><path d="M6 14h4"></path></svg>Machines<span class="mono" style="margin-left:auto;font-size:12px;color:var(--text-3)">8</span></a>
+<a class="nv" href="#"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><ellipse cx="8" cy="4" rx="5" ry="1.8"></ellipse><path d="M3 4v8c0 1 2.2 1.8 5 1.8s5-.8 5-1.8V4"></path></svg>Databases<span class="mono" style="margin-left:auto;font-size:12px;color:var(--text-3)">4</span></a>
+<a class="nv" href="#"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="8" cy="8" r="5.5"></circle><path d="M2.5 8h11M8 2.5c1.8 2 1.8 9 0 11M8 2.5c-1.8 2-1.8 9 0 11"></path></svg>Endpoints<span style="margin-left:auto;display:flex;align-items:center;gap:5px;font-size:12px;color:var(--degraded)"><span class="dot" style="background:var(--degraded);width:6px;height:6px"></span>1</span></a>
+<a class="nv" href="#"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 4.5h4.5L8 6h6v7H2z"></path></svg>Projects</a>
+<a class="nv" href="#"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M8 2.5l1.3 3.2 3.2 1.3-3.2 1.3L8 11.5 6.7 8.3 3.5 7l3.2-1.3z"></path><path d="M12.5 11v3M11 12.5h3"></path></svg>Agent sessions<span class="mono" style="margin-left:auto;font-size:12px;color:var(--text-3)">2</span></a>
+<a class="nv" href="#"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8.5h2.5l2-5 3 9 2-4H14"></path></svg>Activity</a>
+</nav>
+<div class="nh">Hosts</div>
+<a class="nv" href="#"><span class="dot" style="background:var(--degraded)"></span>ms-a2<span style="margin-left:auto;font-size:13px;color:var(--degraded)">1 issue</span></a>
+<a class="nv" href="#"><span class="dot" style="background:transparent;box-shadow:inset 0 0 0 1.5px var(--text-3)"></span>mac-mini<span style="margin-left:auto;font-size:13px;color:var(--text-3)">Stale</span></a>
+<div class="nh">Pinned</div>
+<a class="nv" href="#"><span style="width:8px;height:8px;border-radius:2px;background:var(--series-4)"></span>kimo-platform</a>
+<a class="nv" href="#"><span style="width:8px;height:8px;border-radius:2px;background:var(--series-3)"></span>provn</a>
+<div style="margin-top:auto;display:flex;align-items:center;gap:2px;padding-top:12px">
+<button class="ib" type="button" aria-label="Settings"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="2"></circle><path d="M8 1.5v2M8 12.5v2M1.5 8h2M12.5 8h2M3.4 3.4l1.4 1.4M11.2 11.2l1.4 1.4M3.4 12.6l1.4-1.4M11.2 4.8l1.4-1.4"></path></svg></button>
+<button class="ib" type="button" aria-label="Help"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6"></circle><path d="M6.3 6.2a1.8 1.8 0 0 1 3.4.6c0 1.2-1.7 1.5-1.7 2.6M8 11.3v.2"></path></svg></button>
+</div>
+</aside>
+
+<main style="flex:999 1 520px;min-width:0;padding:8px 8px 0 0;box-sizing:border-box;display:flex">
+<div style="flex:1;min-width:0;background:var(--panel);border:1px solid var(--line);border-radius:12px;display:flex;flex-direction:column;overflow:hidden">
+<header style="display:flex;align-items:center;gap:10px;height:52px;padding:0 12px 0 20px;border-bottom:1px solid var(--line);flex:none">
+<h1 style="margin:0;font-size:14px;font-weight:550">Overview</h1>
+<span style="flex:1"></span>
+<span style="font-size:13px;color:var(--text-3);display:flex;align-items:center;gap:6px"><span class="dot" style="background:var(--running);width:6px;height:6px"></span>Live, 4 s ago</span>
+<div role="group" aria-label="Time range" style="display:flex;padding:2px;border-radius:8px;background:var(--bg);border:1px solid var(--line)">
+<button class="b bg" type="button" style="height:24px;padding:0 8px;border:0">1h</button>
+<button class="b" type="button" aria-pressed="true" style="height:24px;padding:0 8px;border:0;background:var(--raised);box-shadow:0 0 0 1px var(--line-strong)">24h</button>
+<button class="b bg" type="button" style="height:24px;padding:0 8px;border:0">7d</button>
+</div>
+<button class="b bp" type="button">New machine</button>
+<button class="ib" type="button" aria-pressed="true" aria-label="Toggle agent panel" style="background:var(--hover);color:var(--text)"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M8 2l1.4 3.6L13 7l-3.6 1.4L8 12 6.6 8.4 3 7l3.6-1.4z"></path></svg></button>
+</header>
+
+<div style="overflow:auto;flex:1">
+<div style="max-width:960px;margin:0 auto;padding:28px 28px 40px;display:flex;flex-direction:column;gap:32px">
+
+<div>
+<h2 style="margin:0;font-size:24px;line-height:32px;font-weight:600;letter-spacing:-0.02em">Lab overview</h2>
+<p style="margin:4px 0 0;color:var(--text-2)">2 hosts, 8 machines, 21 services. 2 things need your attention.</p>
+</div>
+
+<section aria-labelledby="att" style="display:flex;flex-direction:column;gap:8px">
+<h3 id="att" class="sec" style="position:absolute;width:1px;height:1px;overflow:hidden">Needs attention</h3>
+<div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:12px;padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:var(--degraded-bg)">
+<svg width="16" height="16" viewBox="0 0 16 16" style="flex:none;margin-top:2px" aria-hidden="true"><path d="M8 1.8L14.6 13.6H1.4Z" fill="var(--degraded)"></path><path d="M8 6v3.3M8 11.2v.4" stroke="var(--bg)" stroke-width="1.6" stroke-linecap="round"></path></svg>
+
+<div style="flex:1;min-width:240px">
+<div style="font-weight:550">Hermes gateway is slow, 1.8 s per request</div>
+<div style="color:var(--text-2);margin-top:2px">honcho on hermes-agents has restarted 4 times in 10 min. The agent found the likely cause and has a fix ready for you to review.</div>
+</div>
+<div style="display:flex;gap:6px;align-items:center"><button class="b" type="button">Review fix</button><button class="b bg" type="button">hermes-agents</button></div>
+</div>
+<div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:12px;padding:12px 14px;border-radius:10px;border:1px solid var(--line)">
+<svg width="16" height="16" viewBox="0 0 16 16" style="flex:none;margin-top:2px" aria-hidden="true"><circle cx="8" cy="8" r="6.2" fill="none" stroke="var(--text-3)" stroke-width="1.6"></circle><path d="M8 4.8V8l2.2 1.4" stroke="var(--text-3)" stroke-width="1.6" fill="none" stroke-linecap="round"></path></svg>
+<div style="flex:1;min-width:240px"><div style="font-weight:550">mac-mini stopped reporting 14 min ago</div><div style="color:var(--text-2);margin-top:2px">Its values are shown greyed with their age. The public tunnel runs there, so outside access to Kimo API may be down.</div></div>
+<button class="b" type="button">Check agent</button>
+</div>
+</section>
+
+<section aria-labelledby="hh">
+<div style="display:flex;align-items:baseline;gap:10px;margin-bottom:10px"><h3 id="hh" class="sec">Hosts</h3><a href="#" style="margin-left:auto;font-size:13px;color:var(--text-2);text-decoration:none">All hosts</a></div>
+<div style="border:1px solid var(--line);border-radius:10px;overflow:hidden">
+<div class="row" style="padding:14px 16px;display:grid;grid-template-columns:minmax(140px,1fr) repeat(3,minmax(150px,1fr));gap:20px;align-items:center;border-bottom:1px solid var(--line)">
+<div><div style="display:flex;align-items:center;gap:8px;font-weight:550"><span class="dot" style="background:var(--degraded)"></span>ms-a2</div><div style="font-size:13px;color:var(--text-3);margin-top:2px;padding-left:16px">MS-A2, Ryzen 9, Proxmox VE</div></div>
+<div><div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:var(--text-3)">CPU</span><span class="mono">23%</span></div><div class="bar" style="margin-top:6px"><div style="position:absolute;inset:0 77% 0 0;background:var(--text-2);border-radius:2px"></div></div></div>
+<div><div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:var(--text-3)">Memory</span><span class="mono" style="white-space:nowrap">61.4 / 128 GiB</span></div><div class="bar" style="margin-top:6px"><div style="position:absolute;inset:0 52% 0 0;background:var(--text-2);border-radius:2px"></div></div></div>
+<div><div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:var(--text-3)">Storage</span><span class="mono">1.86 / 4 TB</span></div><div class="bar" style="margin-top:6px"><div style="position:absolute;inset:0 54% 0 0;background:var(--text-2);border-radius:2px"></div></div></div>
+</div>
+<div style="padding:12px 16px 14px;border-bottom:1px solid var(--line);background:var(--raised)">
+<div style="display:flex;justify-content:space-between;font-size:13px;color:var(--text-3);margin-bottom:8px"><span>Memory assigned to machines on ms-a2</span><span class="mono">92 of 128 GiB</span></div>
+<div style="display:flex;height:10px;border-radius:3px;overflow:hidden;gap:2px" role="img" aria-label="hermes-agents 32, db-core 16, dev-main 16, ragflow 16, supabase 12 GiB, 36 GiB free">
+<span style="flex:32;background:var(--series-2)"></span><span style="flex:16;background:var(--series-1)"></span><span style="flex:16;background:var(--series-3)"></span><span style="flex:16;background:var(--series-5)"></span><span style="flex:12;background:var(--series-4)"></span><span style="flex:36;background:var(--line-strong)"></span>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:8px;font-size:13px;color:var(--text-2)">
+<span style="display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:2px;background:var(--series-2)"></span>hermes-agents 32</span>
+<span style="display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:2px;background:var(--series-1)"></span>db-core 16</span>
+<span style="display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:2px;background:var(--series-3)"></span>dev-main 16</span>
+<span style="display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:2px;background:var(--series-5)"></span>ragflow 16</span>
+<span style="display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:2px;background:var(--series-4)"></span>supabase 12</span>
+<span style="display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:2px;background:var(--line-strong)"></span>Free 36 GiB</span>
+</div>
+</div>
+<div class="row" style="padding:14px 16px;display:grid;grid-template-columns:minmax(140px,1fr) repeat(3,minmax(150px,1fr));gap:20px;align-items:center;color:var(--text-3)">
+<div><div style="display:flex;align-items:center;gap:8px;font-weight:550;color:var(--text-2)"><span class="dot" style="box-shadow:inset 0 0 0 1.5px var(--text-3)"></span>mac-mini</div><div style="font-size:13px;margin-top:2px;padding-left:16px">Stale, last report 13:56</div></div>
+<div><div style="display:flex;justify-content:space-between;font-size:13px"><span>CPU</span><span class="mono">48%</span></div><div class="bar" style="margin-top:6px;background:repeating-linear-gradient(90deg,var(--line-strong) 0 3px,transparent 3px 6px)"></div></div>
+<div><div style="display:flex;justify-content:space-between;font-size:13px"><span>Memory</span><span class="mono">Unknown</span></div><div class="bar" style="margin-top:6px;background:repeating-linear-gradient(90deg,var(--line-strong) 0 3px,transparent 3px 6px)"></div></div>
+<div><div style="display:flex;justify-content:space-between;font-size:13px"><span>Machines</span><span class="mono">1</span></div><div class="bar" style="margin-top:6px;background:repeating-linear-gradient(90deg,var(--line-strong) 0 3px,transparent 3px 6px)"></div></div>
+</div>
+</div>
+</section>
+
+<div style="display:flex;flex-wrap:wrap;gap:32px;align-items:flex-start">
+<section aria-labelledby="mh" style="flex:999 1 440px;min-width:0">
+<div style="display:flex;align-items:baseline;margin-bottom:10px"><h3 id="mh" class="sec">Machines</h3><a href="#" style="margin-left:auto;font-size:13px;color:var(--text-2);text-decoration:none">View all 8</a></div>
+<div style="border:1px solid var(--line);border-radius:10px;overflow:auto">
+<table style="width:100%;border-collapse:collapse;min-width:440px">
+<thead><tr><th class="th">Name</th><th class="th">Status</th><th class="th" style="text-align:right">CPU</th><th class="th" style="text-align:right">Memory</th></tr></thead>
+<tbody>
+<tr class="row"><td class="td"><div style="font-weight:500">hermes-agents</div></td><td class="td"><span style="display:inline-flex;align-items:center;gap:6px;color:var(--degraded)"><span class="dot" style="background:var(--degraded);width:6px;height:6px"></span>Degraded</span></td><td class="td mono" style="text-align:right">71%</td><td class="td mono" style="text-align:right">27.1 / 32 GiB</td></tr>
+<tr class="row"><td class="td" style="font-weight:500">dev-main</td><td class="td"><span style="display:inline-flex;align-items:center;gap:6px;color:var(--text-2)"><span class="dot" style="background:var(--running);width:6px;height:6px"></span>Running</span></td><td class="td mono" style="text-align:right">22%</td><td class="td mono" style="text-align:right">9.8 / 16 GiB</td></tr>
+<tr class="row"><td class="td" style="font-weight:500">db-core</td><td class="td"><span style="display:inline-flex;align-items:center;gap:6px;color:var(--text-2)"><span class="dot" style="background:var(--running);width:6px;height:6px"></span>Running</span></td><td class="td mono" style="text-align:right">8%</td><td class="td mono" style="text-align:right">11.2 / 16 GiB</td></tr>
+<tr class="row"><td class="td" style="font-weight:500">supabase</td><td class="td"><span style="display:inline-flex;align-items:center;gap:6px;color:var(--text-2)"><span class="dot" style="background:var(--running);width:6px;height:6px"></span>Running</span></td><td class="td mono" style="text-align:right">14%</td><td class="td mono" style="text-align:right">7.6 / 12 GiB</td></tr>
+<tr class="row"><td class="td" style="font-weight:500;color:var(--text-2)">sandbox-gh</td><td class="td"><span style="display:inline-flex;align-items:center;gap:6px;color:var(--text-3)"><span class="dot" style="box-shadow:inset 0 0 0 1.5px var(--text-3);width:6px;height:6px"></span>Stopped</span></td><td class="td" style="text-align:right;color:var(--text-3)">None</td><td class="td" style="text-align:right"><button class="b" type="button" style="height:24px;font-size:13px">Start</button></td></tr>
+</tbody></table>
+</div>
+</section>
+<section aria-labelledby="ah" style="flex:1 1 240px;min-width:0">
+<div style="display:flex;align-items:baseline;margin-bottom:10px"><h3 id="ah" class="sec">Activity</h3></div>
+<ol style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column">
+
+<li style="display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)"><span class="dot" style="background:var(--degraded);width:6px;height:6px;margin-top:7px"></span><div><div>honcho restarted, 4th time in 10 min</div><div style="font-size:13px;color:var(--text-3)">13:58</div></div></li>
+<li style="display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)"><span class="dot" style="box-shadow:inset 0 0 0 1.5px var(--text-3);width:6px;height:6px;margin-top:7px"></span><div><div>mac-mini stopped reporting</div><div style="font-size:13px;color:var(--text-3)">13:56</div></div></li>
+<li style="display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)"><span class="dot" style="background:var(--text-3);width:6px;height:6px;margin-top:7px"></span><div><div>Codex finished a session on dev-main</div><div style="font-size:13px;color:var(--text-3)">12:40, kimo-platform</div></div></li>
+<li style="display:flex;gap:10px;padding:8px 0"><span class="dot" style="background:var(--text-3);width:6px;height:6px;margin-top:7px"></span><div><div>Nightly snapshot of db-core, 18.4 GiB</div><div style="font-size:13px;color:var(--text-3)">02:04</div></div></li>
+</ol>
+</section>
+</div>
+
+</div>
+</div>
+</div>
+
+
+<aside aria-label="Agent" style="flex:0 0 360px;max-width:100%;margin-left:8px;background:var(--panel);border:1px solid var(--line);border-radius:12px;display:flex;flex-direction:column;overflow:hidden">
+<div style="display:flex;align-items:center;gap:8px;height:52px;padding:0 10px 0 16px;border-bottom:1px solid var(--line);flex:none">
+<span style="font-weight:550">Agent</span><span class="mono" style="font-size:12px;color:var(--text-3);padding:1px 6px;border:1px solid var(--line-strong);border-radius:5px">Claude</span>
+<span style="flex:1"></span>
+<button class="ib" type="button" aria-label="New thread"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M8 3v10M3 8h10"></path></svg></button>
+<button class="ib" type="button" aria-label="Close agent"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 4l8 8M12 4l-8 8"></path></svg></button>
+</div>
+<div style="flex:1;overflow:auto;padding:16px;display:flex;flex-direction:column;gap:16px">
+<div style="align-self:flex-end;max-width:85%;background:var(--raised);border:1px solid var(--line);border-radius:10px 10px 2px 10px;padding:8px 12px">Why is the Hermes gateway slow?</div>
+<div style="display:flex;flex-direction:column;gap:10px">
+<div style="border:1px solid var(--line);border-radius:8px;padding:6px 10px">
+<div class="step"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.2l2.2 2.2 4.8-5" stroke="var(--running)" stroke-width="1.5" fill="none" stroke-linecap="round"></path></svg>Read metrics for hermes-agents<span class="mono" style="margin-left:auto;font-size:12px;color:var(--text-3)">0.4 s</span></div>
+<div class="step"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.2l2.2 2.2 4.8-5" stroke="var(--running)" stroke-width="1.5" fill="none" stroke-linecap="round"></path></svg>Read honcho container logs<span class="mono" style="margin-left:auto;font-size:12px;color:var(--text-3)">1.1 s</span></div>
+<div class="step"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.2l2.2 2.2 4.8-5" stroke="var(--running)" stroke-width="1.5" fill="none" stroke-linecap="round"></path></svg>Timed connections to hermes_memory<span class="mono" style="margin-left:auto;font-size:12px;color:var(--text-3)">7.2 s</span></div>
+</div>
+<p style="margin:0;line-height:23px">honcho is failing its start-up health check. The check gives up after <span class="mono">5 s</span>, but <span class="mono">hermes_memory</span> on db-core is taking about <span class="mono">7 s</span> to accept a connection, so Docker keeps restarting honcho. Hermes waits on honcho, which is why the gateway is at <span class="mono">1.8 s</span>.</p>
+<div style="border:1px solid var(--line-strong);border-radius:10px;overflow:hidden">
+<div style="padding:10px 12px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px"><span style="font-weight:550">Proposed change</span><span class="mono" style="margin-left:auto;font-size:12px;color:var(--text-3)">docker-compose.yml</span></div>
+<div class="mono" style="padding:10px 12px;line-height:22px;background:var(--bg)">
+<div style="color:var(--text-3)">honcho:</div>
+<div style="color:var(--text-3)">  healthcheck:</div>
+<div style="color:var(--down);background:rgba(239,90,76,.08);margin:0 -12px;padding:0 12px">-   timeout: 5s</div>
+<div style="color:var(--running);background:rgba(63,185,127,.08);margin:0 -12px;padding:0 12px">+   timeout: 15s</div>
+</div>
+<div style="padding:10px 12px;font-size:13px;color:var(--text-2);border-top:1px solid var(--line)">Restarts honcho. About 10 s without the gateway.</div>
+<div style="display:flex;gap:6px;padding:0 12px 12px"><button class="b bp" type="button">Approve and apply</button><button class="b bg" type="button">Dismiss</button></div>
+
+</div>
+</div>
+</div>
+<div style="padding:12px;border-top:1px solid var(--line);flex:none">
+<div style="border:1px solid var(--line-strong);border-radius:10px;background:var(--bg);padding:10px 10px 8px">
+<label><span style="position:absolute;width:1px;height:1px;overflow:hidden">Ask the agent</span><textarea rows="2" placeholder="Ask about the lab, or ask for a change" style="width:100%;box-sizing:border-box;resize:none;border:0;outline:0;background:transparent;color:var(--text);font:13px/20px 'Mona Sans',sans-serif"></textarea></label>
+<div style="display:flex;align-items:center;gap:6px"><span class="mono" style="font-size:12px;color:var(--text-2);padding:1px 6px;border:1px solid var(--line-strong);border-radius:5px">hermes-agents</span><span style="flex:1"></span><button class="ib" type="button" aria-label="Send" style="background:var(--primary);color:var(--primary-text);width:26px;height:28px"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M8 13V3M3.5 7.5L8 3l4.5 4.5"></path></svg></button></div>
+</div>
+<div style="font-size:13px;color:var(--text-3);margin-top:8px;text-align:center">The agent can read the whole lab. Every change needs your approval.</div>
+</div>
+</aside>
+
+</main>
+</div>
+<footer style="display:flex;align-items:center;gap:16px;height:28px;padding:0 16px;font-size:13px;color:var(--text-3);flex:none">
+<span style="display:flex;align-items:center;gap:6px"><span class="dot" style="background:var(--running);width:6px;height:6px"></span>Connected to ms-a2</span>
+<span style="display:flex;align-items:center;gap:6px"><span class="dot" style="box-shadow:inset 0 0 0 1.5px var(--text-3);width:6px;height:6px"></span>mac-mini stale</span>
+<span style="margin-left:auto">Synthetic sample data</span>
+</footer>
+</div>
+
+<script>/* Static template preview. */</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!-- @dsCard group="Inputs" height=182 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>FileUpload, preview</title></head>
+<body>
+<div class="pv">
+<div class="sg" style="grid-template-columns:repeat(2,minmax(0,1fr));gap:20px">
+<div style="border:1px dashed var(--line-heavy);border-radius:10px;padding:24px;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center"><svg width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="var(--text-2)" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M8 11V3M4.5 6.5L8 3l3.5 3.5M3 13h10"></path></svg><div>Drop an ISO or cloud image, or <span style="text-decoration:underline;text-underline-offset:3px">browse</span></div><div style="font-size:13px;color:var(--text-3)">.iso, .qcow2, .img up to 20 GB</div></div>
+<div style="display:flex;flex-direction:column;gap:8px">
+<div class="box" style="padding:10px 12px"><div style="display:flex;justify-content:space-between"><span>debian-12.7-amd64.iso</span><span class="mono" style="color:var(--text-3)">412 / 658 MB</span></div><div class="bar" style="margin-top:8px"><i style="width:63%;background:var(--info)"></i></div></div>
+<div class="box" style="padding:10px 12px;display:flex;align-items:center;gap:8px"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="var(--running)"></circle><path d="M5 8.2l2 2 4-4.3" stroke="var(--primary-text)" stroke-width="1.6" fill="none" stroke-linecap="round"></path></svg>ubuntu-24.04-cloud.img<span class="mono" style="margin-left:auto;color:var(--text-3)">612 MB</span></div>
+<div class="box" style="padding:10px 12px;border-color:rgba(239,90,76,.35)"><div style="display:flex;align-items:center;gap:8px"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="var(--down)"></circle><path d="M5.5 5.5l5 5M10.5 5.5l-5 5" stroke="var(--primary-text)" stroke-width="1.6" stroke-linecap="round"></path></svg>windows-11.iso<span class="b bsm bg" style="margin-left:auto">Retry</span></div><div style="font-size:13px;color:var(--down-text);margin-top:4px">Not enough space on local: needs 6.2 GB, 4.1 GB free.</div></div>
+</div></div></div>
+<script>/* Static preview: markup uses JLab classes from bundle.css and tokens from tokens.css. */</script>
+</body>
+</html>

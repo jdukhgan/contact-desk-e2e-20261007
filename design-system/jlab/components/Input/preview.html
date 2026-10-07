@@ -1,0 +1,20 @@
+<!-- @dsCard group="Inputs" height=215 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Input, preview</title></head>
+<body>
+<div class="pv">
+<div class="sg" style="grid-template-columns:repeat(3,minmax(0,1fr));gap:24px 20px">
+<div><span class="lbl">Default</span><input class="inp" placeholder="Machine name"></div>
+<div><span class="lbl">Hover</span><input class="inp" placeholder="Machine name" style="border-color:var(--line-heavy)"></div>
+<div><span class="lbl">Focus</span><input class="inp" value="dev-ma" style="border-color:var(--focus);box-shadow:0 0 0 3px rgba(122,162,255,.18)"></div>
+<div><span class="lbl">With unit</span><div style="display:flex"><input class="inp" value="16" style="border-radius:7px 0 0 7px"><span style="display:flex;align-items:center;padding:0 10px;border:1px solid var(--line-strong);border-left:0;border-radius:0 7px 7px 0;color:var(--text-3);font-size:13px">GiB</span></div><div class="cap">36 GiB free on ms-a2.</div></div>
+<div><span class="lbl">Error</span><input class="inp mono" value="54322" style="border-color:rgba(239,90,76,.6);box-shadow:0 0 0 3px var(--down-bg)"><div style="font-size:13px;color:var(--down-text);margin-top:8px">Port 54322 is used by supabase. Try 54330.</div></div>
+<div><span class="lbl">Disabled</span><input class="inp" value="10.0.10.24" disabled="disabled" style="opacity:.5"><div class="cap">Set by DHCP reservation.</div></div>
+<div><span class="lbl">Select, closed</span><div class="inp" style="display:flex;align-items:center">ms-a2<svg width="12" height="12" viewBox="0 0 12 12" style="margin-left:auto;color:var(--text-3)" aria-hidden="true"><path d="M3 4.5L6 7.5 9 4.5" stroke="currentColor" stroke-width="1.4" fill="none"></path></svg></div></div>
+<div style="grid-column:span 2"><span class="lbl">Select, open</span><div style="display:flex;gap:16px;align-items:flex-start"><div class="inp fr" style="display:flex;align-items:center;max-width:260px">ms-a2<svg width="12" height="12" viewBox="0 0 12 12" style="margin-left:auto;color:var(--text-3)" aria-hidden="true"><path d="M3 7.5L6 4.5 9 7.5" stroke="currentColor" stroke-width="1.4" fill="none"></path></svg></div>
+<div class="menu" style="width:260px"><div class="mi" style="background:var(--hover)"><span class="dot" style="background:var(--degraded)"></span>ms-a2<span style="margin-left:auto;font-size:13px;color:var(--text-3)">36 GiB free</span><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.2l2.2 2.2 4.8-5" stroke="var(--text)" stroke-width="1.5" fill="none"></path></svg></div><div class="mi" style="color:var(--text-3)"><span class="dot" style="box-shadow:inset 0 0 0 1.5px var(--text-3)"></span>mac-mini<span style="margin-left:auto;font-size:13px">Stale, unavailable</span></div></div></div></div>
+</div></div>
+<script>/* Static preview: markup uses JLab classes from bundle.css and tokens from tokens.css. */</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!-- @dsCard group="Overlays" height=182 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Dialog, preview</title></head>
+<body>
+<div class="pv">
+<div style="display:flex;gap:28px;align-items:flex-start;flex-wrap:wrap">
+<div style="width:440px;background:var(--panel);box-shadow:var(--pop);border-radius:14px;overflow:hidden">
+<div style="padding:20px 20px 0"><div style="font-size:16px;font-weight:600">Destroy sandbox-gh?</div><p style="margin:8px 0 0;color:var(--text-2)">This deletes the machine and its 40 GiB disk on ms-a2. Its 3 snapshots are kept for 7 days.</p></div>
+<div style="padding:16px 20px"><span class="lbl">Type <span class="mono" style="color:var(--text)">sandbox-gh</span> to confirm</span><input class="inp mono" value="sandbox-gh" style="border-color:var(--focus);box-shadow:0 0 0 3px rgba(122,162,255,.18)"></div>
+<div style="display:flex;justify-content:flex-end;gap:8px;padding:12px 20px;border-top:1px solid var(--line);background:var(--raised)"><span class="b bg">Cancel</span><span class="b" style="background:var(--down);border-color:var(--down);color:#fff">Destroy machine</span></div>
+</div>
+<div style="flex:1;min-width:220px;color:var(--text-2);display:flex;flex-direction:column;gap:10px"><div>Title asks the question with the resource name. Body states exactly what is lost and what is kept.</div><div>Escape and Cancel close it. Focus returns to the button that opened it.</div><div>Enter never confirms a destructive dialog.</div></div>
+</div></div>
+<script>/* Static preview: markup uses JLab classes from bundle.css and tokens from tokens.css. */</script>
+</body>
+</html>

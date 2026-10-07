@@ -1,0 +1,93 @@
+<!-- @dsCard group="Templates" height=900 width=1440 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>DetailTemplate, template</title>
+<style>
+.r{--ease:cubic-bezier(.23,1,.32,1);font-family:'Mona Sans',system-ui,sans-serif;color:var(--text);background:var(--bg);font-size:14px;font-weight:450;line-height:22px;font-feature-settings:'tnum';}
+.r ::selection{background:rgba(122,162,255,.3)}
+.mono{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px}
+.sec{display:grid;grid-template-columns:220px minmax(0,1fr);gap:48px;padding:36px 0;border-top:1px solid var(--line)}
+.sh{margin:0;font-size:16px;font-weight:600;letter-spacing:-0.01em}
+.sd{margin:6px 0 0;color:var(--text-2)}
+.cap{font-size:13px;color:var(--text-3);margin-top:8px;line-height:18px}
+.sg{display:grid;gap:16px 14px;align-items:start}
+.b{font:500 14px 'Mona Sans',sans-serif;height:32px;padding:0 11px;border-radius:7px;border:1px solid var(--line-strong);background:var(--raised);color:var(--text);display:inline-flex;align-items:center;justify-content:center;gap:7px;cursor:pointer;white-space:nowrap;box-sizing:border-box;transition:transform 160ms var(--ease)}
+.b:active{transform:scale(.97)}
+.bp{background:var(--primary);color:var(--primary-text);border-color:var(--primary)}
+.bg{background:transparent;border-color:transparent;color:var(--text-2)}
+.bd{background:var(--down-bg);border-color:rgba(239,90,76,.35);color:var(--down-text)}
+.bsm{height:28px;padding:0 9px;font-size:13px;border-radius:6px}
+.ib{width:32px;height:32px;padding:0;border-radius:7px;border:0;background:transparent;color:var(--text-2);display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
+.fr{outline:2px solid var(--focus);outline-offset:2px}
+.inp{font:400 14px 'Mona Sans',sans-serif;height:36px;width:100%;box-sizing:border-box;padding:0 10px;border-radius:7px;border:1px solid var(--line-strong);background:var(--panel);color:var(--text)}
+.lbl{display:block;font-size:13px;color:var(--text-2);margin-bottom:6px;font-weight:500}
+.dot{width:7px;height:7px;border-radius:50%;display:inline-block;flex:none}
+.box{background:var(--panel);border:1px solid var(--line);border-radius:12px}
+.th{font-size:13px;font-weight:450;color:var(--text-2);text-align:left;padding:0 12px;height:38px;border-bottom:1px solid var(--line);white-space:nowrap}
+.td{padding:0 12px;height:44px;border-bottom:1px solid var(--line);white-space:nowrap}
+.bar{height:4px;border-radius:2px;background:var(--line-strong);position:relative;overflow:hidden}
+.bar i{position:absolute;left:0;top:0;bottom:0;border-radius:2px}
+.menu{background:var(--raised);border-radius:10px;box-shadow:var(--pop);padding:4px;min-width:220px}
+.mi{display:flex;align-items:center;gap:10px;height:32px;padding:0 8px;border-radius:6px;color:var(--text)}
+.kbd{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--text-3)}
+@media (prefers-reduced-motion:reduce){.b{transition:none}.b:active{transform:none}}
+
+.nv{display:flex;align-items:center;gap:10px;height:32px;padding:0 8px;border-radius:7px;color:var(--text-2);text-decoration:none;font-size:14px}
+.nh{font-size:13px;color:var(--text-3);font-weight:500;padding:16px 8px 4px}
+@media (hover:hover) and (pointer:fine){.nv:hover{background:var(--hover);color:var(--text)}.row:hover{background:var(--raised)}}
+</style></head>
+<body>
+
+<div class="r " style="min-height:900px;display:flex;flex-direction:column">
+<div style="flex:1;display:flex;flex-wrap:wrap">
+<aside aria-label="Navigation" style="flex:0 0 228px;box-sizing:border-box;padding:10px 10px 12px;display:flex;flex-direction:column">
+<div class="nv" style="height:36px;color:var(--text);font-weight:600;gap:9px"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><rect width="22" height="22" rx="6" fill="var(--text)"></rect><path d="M12.5 5.5v7.2a3.3 3.3 0 0 1-6.6 0" stroke="var(--bg)" stroke-width="2.2" fill="none" stroke-linecap="round"></path><circle cx="16" cy="6.5" r="1.9" fill="var(--degraded)"></circle></svg>JLab</div>
+<div class="nv" style="margin:8px 0 6px;height:36px;border:1px solid var(--line);background:var(--panel)"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="7" cy="7" r="4.5"></circle><path d="M10.5 10.5L14 14"></path></svg>Search<span class="kbd" style="margin-left:auto">⌘K</span></div>
+<nav aria-label="Main"><a class="nv" href="#"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><rect x="2" y="2" width="5" height="5" rx="1.2"></rect><rect x="9" y="2" width="5" height="5" rx="1.2"></rect><rect x="2" y="9" width="5" height="5" rx="1.2"></rect><rect x="9" y="9" width="5" height="5" rx="1.2"></rect></svg>Overview</a><a class="nv" href="#"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><rect x="2" y="2.5" width="12" height="4.5" rx="1.2"></rect><rect x="2" y="9" width="12" height="4.5" rx="1.2"></rect></svg>Hosts</a><a class="nv" href="#" aria-current="page" style="background:var(--hover);color:var(--text)"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><rect x="2" y="3" width="12" height="9" rx="1.5"></rect><path d="M6 14h4"></path></svg>Machines<span class="mono" style="margin-left:auto;font-size:12px;color:var(--text-3)">8</span></a><a class="nv" href="#"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><ellipse cx="8" cy="4" rx="5" ry="1.8"></ellipse><path d="M3 4v8c0 1 2.2 1.8 5 1.8s5-.8 5-1.8V4"></path></svg>Databases<span class="mono" style="margin-left:auto;font-size:12px;color:var(--text-3)">4</span></a><a class="nv" href="#"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="8" cy="8" r="5.5"></circle><path d="M2.5 8h11"></path></svg>Endpoints<span style="margin-left:auto;display:flex;align-items:center;gap:5px;font-size:12px;color:var(--degraded)"><span class="dot" style="background:var(--degraded);width:6px;height:6px"></span>1</span></a><a class="nv" href="#"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M2 4.5h4.5L8 6h6v7H2z"></path></svg>Projects</a><a class="nv" href="#"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M8 2.5l1.3 3.2 3.2 1.3-3.2 1.3L8 11.5 6.7 8.3 3.5 7l3.2-1.3z"></path></svg>Agent sessions<span class="mono" style="margin-left:auto;font-size:12px;color:var(--text-3)">2</span></a><a class="nv" href="#"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M2 8.5h2.5l2-5 3 9 2-4H14"></path></svg>Activity</a></nav>
+<div class="nh">Hosts</div>
+<a class="nv" href="#"><span class="dot" style="background:var(--degraded)"></span>ms-a2<span style="margin-left:auto;font-size:13px;color:var(--degraded)">1 issue</span></a>
+<a class="nv" href="#"><span class="dot" style="box-shadow:inset 0 0 0 1.5px var(--text-3)"></span>mac-mini<span style="margin-left:auto;font-size:13px;color:var(--text-3)">Stale</span></a>
+</aside>
+<main style="flex:999 1 520px;min-width:0;padding:8px 8px 0 0;box-sizing:border-box;display:flex">
+<div style="flex:1;min-width:0;background:var(--panel);border:1px solid var(--line);border-radius:12px;display:flex;flex-direction:column;overflow:hidden">
+<header style="display:flex;align-items:center;gap:10px;min-height:52px;padding:0 12px 0 20px;border-bottom:1px solid var(--line);flex-wrap:wrap"><nav aria-label="Breadcrumb" style="display:flex;align-items:center;gap:6px;color:var(--text-3)"><a href="#" style="color:var(--text-3);text-decoration:none">Machines</a><span>/</span><span style="color:var(--text);font-weight:550">hermes-agents</span></nav>
+<span style="display:inline-flex;align-items:center;gap:6px;color:var(--degraded);font-size:13px;margin-left:4px"><span class="dot" style="background:var(--degraded);width:6px;height:6px"></span>Degraded</span>
+<span style="flex:1"></span><span style="font-size:13px;color:var(--text-3);display:flex;align-items:center;gap:6px"><span class="dot" style="background:var(--running);width:6px;height:6px"></span>Live, 4 s ago</span>
+<div style="display:flex;padding:2px;border-radius:8px;background:var(--bg);border:1px solid var(--line)"><span class="b bg" style="height:24px;padding:0 8px;border:0">1h</span><span class="b" style="height:24px;padding:0 8px;border:0;box-shadow:0 0 0 1px var(--line-strong)">6h</span><span class="b bg" style="height:24px;padding:0 8px;border:0">24h</span></div>
+<span class="b">Console</span><span class="b">Snapshot</span><span class="b bp">Restart</span><button class="ib" type="button" aria-label="Open agent panel"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M8 2.5l1.3 3.2 3.2 1.3-3.2 1.3L8 11.5 6.7 8.3 3.5 7l3.2-1.3z"></path></svg></button></header>
+<div style="flex:1;overflow:auto"><div style="border-bottom:1px solid var(--line);padding:0 20px;display:flex;gap:22px">
+<span style="padding:11px 0;font-weight:500;box-shadow:inset 0 -2px 0 var(--text)">Summary</span><span style="padding:11px 0;color:var(--text-2)">Containers <span class="mono" style="font-size:12px;color:var(--text-3)">3</span></span><span style="padding:11px 0;color:var(--text-2)">Logs</span><span style="padding:11px 0;color:var(--text-2)">Snapshots <span class="mono" style="font-size:12px;color:var(--text-3)">7</span></span><span style="padding:11px 0;color:var(--text-2)">Network</span><span style="padding:11px 0;color:var(--text-2)">Settings</span></div>
+<div style="padding:20px;display:flex;flex-wrap:wrap;gap:24px;align-items:flex-start">
+<div style="flex:999 1 520px;min-width:0;display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;flex-wrap:wrap;gap:12px;align-items:flex-start;padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:var(--degraded-bg)"><svg width="16" height="16" viewBox="0 0 16 16" style="flex:none;margin-top:2px" aria-hidden="true"><path d="M8 1.8L14.6 13.6H1.4Z" fill="var(--degraded)"></path><path d="M8 6v3.3M8 11.2v.4" stroke="var(--bg)" stroke-width="1.6" stroke-linecap="round"></path></svg><div style="flex:1;min-width:220px"><div style="font-weight:550">honcho has restarted 4 times in 10 min</div><div style="color:var(--text-2)">The gateway is answering in 1.8 s. The agent has a fix ready.</div></div><span class="b">Review fix</span></div>
+<div class="box" style="padding:16px 18px"><div style="display:flex;align-items:baseline;gap:10px"><span style="font-weight:600;font-size:16px">Memory, GiB</span><span style="font-size:13px;color:var(--text-3)">27.1 of 32 in use</span><span class="mono" style="margin-left:auto;font-size:12px;color:var(--text-3)">last 6 h</span></div>
+<div style="display:flex;gap:10px;margin-top:14px"><div class="mono" style="display:flex;flex-direction:column;justify-content:space-between;height:160px;font-size:12px;color:var(--text-3);text-align:right;width:28px"><span>32</span><span>16</span><span>0</span></div>
+<svg viewBox="0 0 600 160" preserveAspectRatio="none" style="flex:1;height:160px" aria-label="Memory rose from 19 to 27 GiB with drops at each honcho restart"><path d="M0 .5H600M0 80H600M0 159.5H600" stroke="var(--line)"></path><path d="M0 20H600" stroke="var(--degraded)" stroke-width="1.2" stroke-dasharray="5 5"></path><path d="M0 66 L90 64 L180 60 L270 55 L360 50 L430 44 L480 38 L500 47 L525 35 L545 45 L565 33 L580 43 L600 25" fill="none" stroke="var(--series-2)" stroke-width="2" stroke-linejoin="round"></path></svg></div>
+<div class="mono" style="display:flex;justify-content:space-between;font-size:12px;color:var(--text-3);margin:6px 0 0 38px"><span>08:00</span><span>10:00</span><span>12:00</span><span>14:00</span></div>
+<div style="font-size:13px;color:var(--text-2);margin-top:8px;display:flex;align-items:center;gap:6px"><span style="width:12px;border-top:1.5px dashed var(--degraded)"></span>28 GiB, alert threshold</div></div>
+<section><h2 style="margin:0 0 10px;font-size:16px;font-weight:600">Containers</h2><div style="border:1px solid var(--line);border-radius:10px;overflow:auto"><table style="width:100%;border-collapse:collapse;min-width:480px"><thead><tr><th class="th">Name</th><th class="th">Status</th><th class="th">Image</th><th class="th" style="text-align:right">Memory</th><th class="th">Up for</th></tr></thead><tbody>
+<tr class="row"><td class="td" style="font-weight:500">hermes</td><td class="td"><span style="display:inline-flex;align-items:center;gap:6px;color:var(--text-2)"><span class="dot" style="background:var(--running)"></span>Running</span></td><td class="td mono">hermes-agent:0.9</td><td class="td mono" style="text-align:right">11.4 GiB</td><td class="td" style="color:var(--text-2)">1 d 2 h</td></tr>
+<tr class="row"><td class="td" style="font-weight:500">agentmemory</td><td class="td"><span style="display:inline-flex;align-items:center;gap:6px;color:var(--text-2)"><span class="dot" style="background:var(--running)"></span>Running</span></td><td class="td mono">agentmemory:latest</td><td class="td mono" style="text-align:right">2.1 GiB</td><td class="td" style="color:var(--text-2)">1 d 2 h</td></tr>
+<tr class="row"><td class="td" style="font-weight:500">honcho</td><td class="td"><span style="display:inline-flex;align-items:center;gap:6px;color:var(--degraded)"><span class="dot" style="background:var(--degraded)"></span>Restarting</span></td><td class="td mono">honcho:2.3</td><td class="td mono" style="text-align:right">0.9 GiB</td><td class="td" style="color:var(--degraded)">41 s</td></tr>
+</tbody></table></div></section>
+</div>
+<aside aria-label="Details" style="flex:1 1 260px;min-width:0;display:flex;flex-direction:column;gap:20px">
+<dl class="box" style="margin:0;padding:4px 16px">
+<div style="display:flex;padding:9px 0;border-bottom:1px solid var(--line)"><dt style="width:96px;color:var(--text-3)">Host</dt><dd style="margin:0">ms-a2</dd></div>
+<div style="display:flex;padding:9px 0;border-bottom:1px solid var(--line)"><dt style="width:96px;color:var(--text-3)">VMID</dt><dd class="mono" style="margin:0">104</dd></div>
+<div style="display:flex;padding:9px 0;border-bottom:1px solid var(--line)"><dt style="width:96px;color:var(--text-3)">Address</dt><dd class="mono" style="margin:0">10.0.10.24</dd></div>
+<div style="display:flex;padding:9px 0;border-bottom:1px solid var(--line)"><dt style="width:96px;color:var(--text-3)">Resources</dt><dd class="mono" style="margin:0">8 cores, 32 GiB</dd></div>
+<div style="display:flex;padding:9px 0"><dt style="width:96px;color:var(--text-3)">Project</dt><dd style="margin:0">hermes</dd></div>
+</dl>
+<div class="box" style="padding:12px 16px"><div style="font-weight:600;margin-bottom:6px">Recent</div>
+<div style="display:flex;gap:10px;padding:6px 0"><span class="dot" style="background:var(--degraded);width:6px;height:6px;margin-top:7px"></span><div><div>honcho restarted</div><div style="font-size:13px;color:var(--text-3)">13:58</div></div></div>
+<div style="display:flex;gap:10px;padding:6px 0"><span class="dot" style="background:var(--text-3);width:6px;height:6px;margin-top:7px"></span><div><div>Snapshot "nightly"</div><div style="font-size:13px;color:var(--text-3)">02:00, 22 GiB</div></div></div></div>
+</aside>
+</div></div>
+</div></main></div>
+<footer style="display:flex;align-items:center;gap:16px;height:28px;padding:0 16px;font-size:13px;color:var(--text-3)"><span style="display:flex;align-items:center;gap:6px"><span class="dot" style="background:var(--running);width:6px;height:6px"></span>Connected to ms-a2</span><span style="display:flex;align-items:center;gap:6px"><span class="dot" style="box-shadow:inset 0 0 0 1.5px var(--text-3);width:6px;height:6px"></span>mac-mini stale</span><span style="margin-left:auto">Synthetic sample data</span></footer>
+</div>
+
+<script>/* Static template preview. */</script>
+</body>
+</html>

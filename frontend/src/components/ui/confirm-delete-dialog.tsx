@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, type RefObject } from "react";
 import * as AlertDialog from "@radix-ui/react-alert-dialog";
 import { Button } from "./button";
 import { Input } from "./field";
@@ -14,10 +14,11 @@ interface Props {
   error?: string;
   onConfirm: () => void;
   onCancel: () => void;
+  returnFocusRef: RefObject<HTMLButtonElement | null>;
 }
 
 /** Destructive confirm: title asks the question with the name, type-the-name enables the button, Enter never confirms. */
-export function ConfirmDeleteDialog({ open, name, consequence, deleting, error, onConfirm, onCancel }: Props) {
+export function ConfirmDeleteDialog({ open, name, consequence, deleting, error, onConfirm, onCancel, returnFocusRef }: Props) {
   const [typed, setTyped] = useState("");
   useEffect(() => {
     if (open) setTyped("");
@@ -28,7 +29,13 @@ export function ConfirmDeleteDialog({ open, name, consequence, deleting, error, 
     <AlertDialog.Root open={open} onOpenChange={(o) => !o && !deleting && onCancel()}>
       <AlertDialog.Portal>
         <AlertDialog.Overlay className="animate-fade-in fixed inset-0 z-50 bg-black/35" />
-        <AlertDialog.Content className="animate-dialog-in fixed left-1/2 top-1/2 z-50 w-[calc(100%-32px)] max-w-[440px] -translate-x-1/2 -translate-y-1/2 rounded-2xl bg-raised p-6 shadow-pop outline-none">
+        <AlertDialog.Content
+          onCloseAutoFocus={(event) => {
+            event.preventDefault();
+            returnFocusRef.current?.focus();
+          }}
+          className="animate-dialog-in fixed left-1/2 top-1/2 z-50 w-[calc(100%-32px)] max-w-[440px] -translate-x-1/2 -translate-y-1/2 rounded-2xl bg-raised p-6 shadow-pop outline-none"
+        >
           <AlertDialog.Title className="text-section text-foreground">Delete {name}?</AlertDialog.Title>
           <AlertDialog.Description className="mt-2 text-body text-muted-foreground">{consequence}</AlertDialog.Description>
           <form

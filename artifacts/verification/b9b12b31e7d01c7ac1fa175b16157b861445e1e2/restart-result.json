@@ -1,0 +1,8 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "### Result\n{\"restart\":\"PASS\",\"createdEdited\":\"Persistence Fixture notes retained\",\"deleted\":\"Zoë Verifier remains absent\",\"others\":\"Six seed contacts preserved\",\"theme\":\"light\"}\n### Ran Playwright code\n```js\nawait (async(page)=>{\nawait page.reload();await page.getByText('7 of 7 contacts').waitFor();\nif(await page.getByRole('button',{name:/Zoë Verifier/}).count())throw Error('Deleted record resurrected');\nawait page.getByRole('button',{name:/Persistence Fixture/}).filter({visible:true}).click();\nif(await page.getByLabel('Notes',{exact:true}).inputValue()!=='Created and edited by browser; survives actual server restart.')throw Error('Lost persisted edit');\nawait page.getByRole('button',{name:'Cancel',exact:true}).click();\nawait page.getByRole('button',{name:/Dev Patel/}).filter({visible:true}).click();\nif(await page.getByLabel('Notes',{exact:true}).inputValue()!=='Unsaved fictional retry note')throw Error('Lost retry save');\nreturn {restart:'PASS',createdEdited:'Persistence Fixture notes retained',deleted:'Zoë Verifier remains absent',others:'Six seed contacts preserved',theme:await page.locator('html').getAttribute('class')};\n})(page);\n```"
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { ChevronRight, Plus, Trash2, UserX } from "lucide-react";
 import { AppShell, PageHeader } from "@/components/ui/app-shell";
 import { Button } from "@/components/ui/button";
@@ -57,6 +57,7 @@ export function ContactDesk({ contacts, owners, loadState, loadError, onRetry, o
   const [confirmDelete, setConfirmDelete] = useState(false);
   const [deleting, setDeleting] = useState(false);
   const [deleteError, setDeleteError] = useState<string | undefined>();
+  const deleteButtonRef = useRef<HTMLButtonElement>(null);
 
   const visible = useMemo(() => filterContacts(contacts, filters), [contacts, filters]);
 
@@ -172,7 +173,7 @@ export function ContactDesk({ contacts, owners, loadState, loadError, onRetry, o
           left={crumb(isNew ? "New contact" : current!.name)}
           right={
             !isNew && (
-              <Button variant="destructive" onClick={() => { setDeleteError(undefined); setConfirmDelete(true); }}>
+              <Button ref={deleteButtonRef} variant="destructive" onClick={() => { setDeleteError(undefined); setConfirmDelete(true); }}>
                 <Trash2 size={16} strokeWidth={1.5} aria-hidden />
                 Delete
               </Button>
@@ -202,6 +203,7 @@ export function ContactDesk({ contacts, owners, loadState, loadError, onRetry, o
         </div>
         {!isNew && (
           <ConfirmDeleteDialog
+            returnFocusRef={deleteButtonRef}
             open={confirmDelete}
             name={current!.name}
             consequence="This permanently removes the contact and its notes. Other contacts are not affected."

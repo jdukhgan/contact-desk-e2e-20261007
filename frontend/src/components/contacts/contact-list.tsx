@@ -21,7 +21,7 @@ interface Props {
   onCreate: () => void;
 }
 
-const COLS = "grid-cols-[minmax(200px,1.4fr)_minmax(140px,1fr)_minmax(130px,0.8fr)_110px_120px]";
+const COLS = "grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)_minmax(0,0.8fr)_90px_120px] xl:grid-cols-[minmax(200px,1.4fr)_minmax(140px,1fr)_minmax(130px,0.8fr)_110px_120px]";
 
 export function ContactList({ state, contacts, totalCount, owners, errorMessage, onOpen, onRetry, onClearFilters, onCreate }: Props) {
   if (state === "error") {

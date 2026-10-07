@@ -1,5 +1,7 @@
 # D2 implementation handoff
 
+Latest handoff: D4 tablet column clipping and delete-dialog focus return corrections are implemented. See `artifacts/implementation/d4-corrections/report.md`, `tests/browser-regression.js` and the native task plan for the exact corrected revision, browser/build/full-suite evidence and pending independent Review, D4 re-verification, D5 Designer and D6 Lead gates. Prior review/verification evidence is preserved.
+
 The completed D1 code and render-evidence commits were imported from the same-project Designer checkout `/home/kandev/.kandev/tasks/task-edb2a677-c81b-4600-a423-ad228a441eba`: `2bf5f48d89604c67f2925cbf0f65871e06043b20` and `7585751e34a9d59c047b89cc07bf0cfa5a1fe7d7`. The parent planning commit is preserved. Native D1 readback was COMPLETED before integration; six list references (all three sizes, both themes) and the component handoff were inspected.
 
 Builder adds `server/` (single-process HTTP/static server, SQLite schema, one-time seeds, parameterized CRUD/search/filter queries and mutation validation), `frontend/src/api/` (abortable versioned loads, mutation callbacks and regression tests), root npm commands, and restart integration tests. `App.tsx` now uses the API controller, and Vite proxies development API requests. Designer-owned visual primitives are preserved.

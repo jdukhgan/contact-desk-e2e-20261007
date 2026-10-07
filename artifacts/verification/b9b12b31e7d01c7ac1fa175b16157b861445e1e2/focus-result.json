@@ -1,0 +1,8 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "### Result\n[{\"width\":1440,\"close\":\"Escape\",\"opened\":true,\"triggerFocused\":false,\"active\":\"BODY\"},{\"width\":1440,\"close\":\"Cancel\",\"opened\":true,\"triggerFocused\":false,\"active\":\"BODY\"},{\"width\":390,\"close\":\"Escape\",\"opened\":true,\"triggerFocused\":false,\"active\":\"BODY\"},{\"width\":390,\"close\":\"Cancel\",\"opened\":true,\"triggerFocused\":false,\"active\":\"BODY\"}]\n### Ran Playwright code\n```js\nawait (async(page)=>{\nconst results=[];\nfor(const width of [1440,390]){\nawait page.setViewportSize({width,height:900});\nfor(const close of ['Escape','Cancel']){\nawait page.getByRole('button',{name:'Delete',exact:true}).click();\nconst opened=await page.getByRole('alertdialog').isVisible();\nif(close==='Escape')await page.keyboard.press('Escape');\nelse await page.getByRole('alertdialog').getByRole('button',{name:'Cancel',exact:true}).click();\nawait page.getByRole('alertdialog').waitFor({state:'hidden'});\nresults.push({width,close,opened,triggerFocused:await page.getByRole('button',{name:'Delete',exact:true}).evaluate(e=>e===document.activeElement),active:await page.evaluate(()=>document.activeElement.tagName)});\n}\n}\nawait page.getByRole('button',{name:'Cancel',exact:true}).click();\nreturn results;\n})(page);\n```"
+    }
+  ]
+}

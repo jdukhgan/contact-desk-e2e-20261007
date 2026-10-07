@@ -5,6 +5,8 @@ import { mkdtemp, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { once } from 'node:events';
+import { request as httpRequest } from 'node:http';
+import { setTimeout as delay } from 'node:timers/promises';
 
 async function start(db) {
   const child = spawn(process.execPath, ['server/index.mjs'], {env:{...process.env, PORT:'0', DB_PATH:db}, stdio:['ignore','pipe','pipe']});
@@ -78,5 +80,67 @@ test('HTTP CRUD, validation, AND filters, literal search and restart persistence
     await app.stop(); app=await start(join(dir,'contacts.db'));
     assert.deepEqual((await request('/api/contacts')).data.contacts,[]);
     assert.equal((await request('/api/owners')).data.owners.length,2);
+  } finally {if(app) await app.stop(); await rm(dir,{recursive:true,force:true});}
+});
+
+test('chunked mutation bodies preserve Unicode, enforce byte limits and handle concurrent deletion', async () => {
+  const dir = await mkdtemp(join(tmpdir(),'contact-boundaries-'));
+  let app;
+  try {
+    app = await start(join(dir,'contacts.db'));
+    const send = async (path, method, chunks, between = () => delay(80)) => {
+      const req = httpRequest(app.url+path, {method, headers:{'Content-Type':'application/json'}});
+      const result = new Promise((resolve,reject) => {
+        req.on('error',reject);
+        req.on('response',res => {
+          let body='';
+          res.setEncoding('utf8');
+          res.on('data',chunk => body+=chunk);
+          res.on('error',reject);
+          res.on('end',() => resolve({status:res.statusCode, data:body?JSON.parse(body):null}));
+        });
+      });
+      try {
+        req.write(chunks[0]);
+        await between();
+        req.end(chunks[1]);
+        return await result;
+      } catch(error) {req.destroy(); await result.catch(()=>{}); throw error;}
+    };
+    const input={name:'Zoë Boundary',company:'東京',notes:'Fictional 🌍 fixture'};
+    const bytes=Buffer.from(JSON.stringify(input));
+    for(const character of ['ë','東','🌍']) {
+      const offset=bytes.indexOf(Buffer.from(character));
+      for(let split=offset+1;split<offset+Buffer.byteLength(character);split++) {
+        const created=await send('/api/contacts','POST',[bytes.subarray(0,split),bytes.subarray(split)]);
+        assert.equal(created.status,201);
+        const path='/api/contacts/'+created.data.contact.id;
+        for(const method of ['GET','PUT']) {
+          const saved=method==='GET'
+            ? {status:200,data:await (await fetch(app.url+path)).json()}
+            : await send(path,method,[bytes.subarray(0,split),bytes.subarray(split)]);
+          assert.equal(saved.status,200);
+          for(const field of ['name','company','notes']) assert.equal(saved.data.contact[field],input[field]);
+        }
+        const persisted=await (await fetch(app.url+path)).json();
+        for(const field of ['name','company','notes']) assert.equal(persisted.contact[field],input[field]);
+      }
+    }
+    const oversized=Buffer.from(JSON.stringify({name:'Too large',notes:'ë'.repeat(33000)}));
+    const rejected=await send('/api/contacts','POST',[oversized.subarray(0,40000),oversized.subarray(40000)]);
+    assert.equal(rejected.status,400);
+    assert.equal(rejected.data.error,'Request body is too large.');
+    const baseline=(await (await fetch(app.url+'/api/contacts')).json()).contacts;
+    const target=baseline[0];
+    const path='/api/contacts/'+target.id;
+    const update=await send(path,'PUT',[Buffer.from('{"name":"Edited'),Buffer.from(' Boundary"}')],async()=>{
+      // Leave the PUT body incomplete while DELETE completes on another connection.
+      await delay(80);
+      assert.equal((await fetch(app.url+path,{method:'DELETE'})).status,204);
+    });
+    assert.equal(update.status,404);
+    assert.equal(update.data.error,'This contact no longer exists.');
+    assert.equal((await fetch(app.url+path)).status,404);
+    assert.deepEqual((await (await fetch(app.url+'/api/contacts')).json()).contacts,baseline.slice(1));
   } finally {if(app) await app.stop(); await rm(dir,{recursive:true,force:true});}
 });

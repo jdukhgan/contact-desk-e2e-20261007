@@ -10,9 +10,10 @@ const types={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=
 const json=(res,status,data)=>{res.writeHead(status,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store'});res.end(data===undefined?undefined:JSON.stringify(data));};
 const getContact=id=>db.prepare('SELECT * FROM contacts WHERE id=?').get(id);
 async function readBody(req) {
-  let body='', size=0;
-  for await(const chunk of req) {size+=chunk.length; if(size>65536) throw new Error('Request body is too large.'); body+=chunk;}
-  try{return JSON.parse(body);}catch{throw new Error('Invalid JSON body.');}
+  const chunks=[];
+  let size=0;
+  for await(const chunk of req) {size+=chunk.length; if(size>65536) throw new Error('Request body is too large.'); chunks.push(chunk);}
+  try{return JSON.parse(Buffer.concat(chunks,size).toString('utf8'));}catch{throw new Error('Invalid JSON body.');}
 }
 const server=createServer(async(req,res)=>{
   try {
@@ -50,6 +51,7 @@ const server=createServer(async(req,res)=>{
         return json(res,201,{contact:getContact(Number(saved.lastInsertRowid))});
       }
       const previous=getContact(id);
+      if(!previous) return json(res,404,{error:'This contact no longer exists.'});
       const updated=new Date(Math.max(Date.now(),Date.parse(previous.updatedAt)+1)).toISOString();
       db.prepare('UPDATE contacts SET name=?,email=?,company=?,ownerId=?,status=?,notes=?,updatedAt=? WHERE id=?').run(c.name,c.email,c.company,c.ownerId,c.status,c.notes,updated,id);
       return json(res,200,{contact:getContact(id)});

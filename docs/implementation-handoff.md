@@ -11,3 +11,11 @@ Validation performed: `npm ci --offline --prefix frontend` (88 installed, audit 
 Next gate: independent native Reviewer must inspect validation, SQL/seed lifecycle, persistence tests, controller races and error handling on the exact revision recorded in the native plan. Then native UI Tester verifies the integrated browser flows and captures evidence, followed by mandatory final Designer visual acceptance at Lead acceptance. These gates have not passed during D2. Initial design screenshots are references only. No external publication or deployment occurred.
 
 Launch: `npm run setup && npm run build && npm start`; open `http://127.0.0.1:3000`. Runtime configuration and test commands are in README.
+
+## Review corrections — 2026-10-07
+
+Both findings from native review run `e616d046-13af-4d68-bf84-4fa85ebd0812` are corrected. `server/index.mjs` retains at most 65,536 request bytes and decodes the complete buffer once, preserving UTF-8 characters split across chunks. PUT rechecks the contact after reading its body and returns the contracted 404 when a concurrent DELETE removed it.
+
+`tests/server.test.mjs` adds an actual HTTP regression scenario: POST and PUT split two-, three-, and four-byte characters at every internal byte boundary, assert returned and stored text, reject an oversized multibyte body by byte count, and complete DELETE while PUT awaits the remaining body. It asserts PUT returns 404, the deleted contact stays absent and every unrelated contact remains unchanged. The new Unicode assertion failed on the prior implementation (`Zo�� Boundary`), then both HTTP scenarios passed after the fixes. The existing eight frontend tests remain unchanged. Test servers are stopped and awaited and disposable databases removed in `finally`.
+
+The original review report and diagnostic are preserved under `artifacts/review/f3af9c36d9832206c6b11d234c183e8b9117529b/`. Exact corrected revision and build/full-suite results are recorded in the native plan. Independent re-review is required before D4, followed by D5 and D6; this correction handoff does not approve those gates. No UI primitives, external merge or deployment changed.

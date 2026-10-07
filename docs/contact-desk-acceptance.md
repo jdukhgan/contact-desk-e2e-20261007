@@ -54,3 +54,11 @@ npm run setup && npm run build && npm start
 Open http://127.0.0.1:3000. Default persistent database: data/contact-desk.db. Set DB_PATH to an absolute disposable path for verification. Stop with Ctrl+C. Build before npm test.
 
 Accepted code and evidence are integrated locally on the task branch; the final delivery commit and source-equality checks are recorded in the native task plan. No push, external merge, publication or application deployment is requested or performed. Native Done readback is pending.
+
+## Operator readback after native acceptance
+
+On 2026-10-07, the E2E operator confirmed task `3f11e79e-13dd-4352-a7bf-072dc2c64364` is `COMPLETED` in the terminal Done step. Delivery `9a42ecd9fe567410382d9e6038978375fb6f2ec4` was published to this public trial repository; the application source remains identical to tested `c40e9a0`.
+
+A separate loopback-only preview now runs on worker VM 411 under transient user unit `contact-desk-e2e-preview`, with SQLite in `/home/kandev/.local/share/contact-desk-e2e/contacts.db`. The operator independently created, edited, reloaded and removed a disposable fictional contact through the UI, leaving the original six contacts. This preview is outside the agents' cleaned-up verification resources. Stop it with `systemctl --user stop contact-desk-e2e-preview` on the worker. Its private local tunnel is temporary, not a public deployment.
+
+Configuration limits observed: selected Claude Opus was substituted with Sonnet; Semble failed to connect; inactive agent CLI processes remain resident despite no running development sessions. These require separate configuration follow-up and are not claimed as passing capability checks. The single run did not test project deletion or parallel-load capacity.

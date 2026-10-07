@@ -67,7 +67,7 @@ Map API `{error, fields?}` bodies straight into the `{ok:false}` results; map `{
 
 ## Evidence
 
-Screenshots: `artifacts/design/<revision>/` — `{desktop,tablet,phone}-{dark,light}-{list,detail}.png` (12) and `state-*` for loading, error, empty, filtered-empty, invalid, saving, delete-dialog (desktop and phone, both themes; delete dialog also at tablet). Functional checks run in the browser at desktop and phone, both themes: invalid create blocked and focus on first invalid field; create works; delete button disabled until the name is typed; Enter keeps the dialog open; Escape closes; typed delete removes only that contact (back to 6 of 6 after removing the test contact).
+Screenshots: `artifacts/design/2bf5f48d89604c67f2925cbf0f65871e06043b20/` — `{desktop,tablet,phone}-{dark,light}-{list,detail}.png` (12) and `state-*` for loading, error, empty, filtered-empty, invalid, saving, delete-dialog (desktop and phone, both themes; delete dialog also at tablet). Functional checks run in the browser at desktop and phone, both themes: invalid create blocked and focus on first invalid field; create works; delete button disabled until the name is typed; Enter keeps the dialog open; Escape closes; typed delete removes only that contact (back to 6 of 6 after removing the test contact).
 
 ## Known gaps
 

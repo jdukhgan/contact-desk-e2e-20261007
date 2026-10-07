@@ -20,3 +20,6 @@ Build an elegant responsive contact tracker with a list, search, owner/status fi
 12. UI Tester verifies the running app at desktop and phone in both themes, captures final screenshots, and supplies exact-commit evidence. Lead integrates commits, accepts the result, documents the launch URL/command and completes the workflow.
 
 Treat this as 4–6 meaningful delegated deliverables, not twelve separate implementation agents. At most two active child tasks and one browser-heavy stage at a time. UI Designer first establishes the code foundation; Builder handles frontend integration and backend. Reviewer reviews code/persistence; UI Tester verifies the actual UI without repeating the full code review. Lead owns integration and final acceptance. Stop owned browser/server processes when finished; leave a documented runnable app.
+
+## Frontend (UI foundation)
+`cd frontend && npm install && npm run dev` runs the demo UI. See `docs/design/contact-desk-handoff.md`.

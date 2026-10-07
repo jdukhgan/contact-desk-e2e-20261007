@@ -1,0 +1,211 @@
+@import "tailwindcss";
+
+/* JLab tokens. Source of truth: design-system/jlab/tokens.json (values copied 1:1). */
+@font-face {
+  font-family: "Mona Sans";
+  src: url("./fonts/MonaSans-Variable.woff2") format("woff2");
+  font-weight: 200 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("./fonts/JetBrainsMono-Variable.woff2") format("woff2");
+  font-weight: 100 800;
+  font-display: swap;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root,
+.dark {
+  --bg: #0c0d0f;
+  --panel: #1a1b1f;
+  --raised: #222328;
+  --hover: #2a2b30;
+  --line: rgba(255, 255, 255, 0.1);
+  --line-strong: rgba(255, 255, 255, 0.15);
+  --line-heavy: rgba(255, 255, 255, 0.24);
+  --text: #edeef0;
+  --text-2: #b7bac1;
+  --text-3: #9ea2aa;
+  --primary: #edeef0;
+  --primary-text: #0c0d0f;
+  --focus: #7aa2ff;
+  --info: #7aa2ff;
+  --running: #3fb97f;
+  --running-bg: rgba(63, 185, 127, 0.1);
+  --degraded: #e2a93b;
+  --degraded-bg: rgba(226, 169, 59, 0.1);
+  --down: #ef5a4c;
+  --down-text: #ff8a7e;
+  --down-bg: rgba(239, 90, 76, 0.1);
+  --stopped: #9ea2aa;
+  --series-1: #7aa2ff;
+  --series-2: #b391ff;
+  --series-3: #4fc7c2;
+  --series-4: #e58fb8;
+  --series-5: #c9b458;
+  --pop: 0 12px 32px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.08);
+  color-scheme: dark;
+}
+.light {
+  --bg: #ecedef;
+  --panel: #ffffff;
+  --raised: #f7f7f8;
+  --hover: #e9eaed;
+  --line: rgba(0, 0, 0, 0.1);
+  --line-strong: rgba(0, 0, 0, 0.16);
+  --line-heavy: rgba(0, 0, 0, 0.24);
+  --text: #111215;
+  --text-2: #474b53;
+  --text-3: #5a5e66;
+  --primary: #111215;
+  --primary-text: #ffffff;
+  --focus: #2f64d6;
+  --info: #2f64d6;
+  --running: #1e8752;
+  --running-bg: rgba(30, 135, 82, 0.08);
+  --degraded: #a06400;
+  --degraded-bg: rgba(196, 128, 0, 0.08);
+  --down: #c9372c;
+  --down-text: #c9372c;
+  --down-bg: rgba(201, 55, 44, 0.07);
+  --stopped: #5a5e66;
+  --series-1: #2f64d6;
+  --series-2: #7c4fd6;
+  --series-3: #138a85;
+  --series-4: #c24d88;
+  --series-5: #8a7a1e;
+  --pop: 0 12px 32px rgba(17, 18, 21, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.06);
+  color-scheme: light;
+}
+
+@theme inline {
+  --color-background: var(--bg);
+  --color-card: var(--panel);
+  --color-raised: var(--raised);
+  --color-hover: var(--hover);
+  --color-popover: var(--raised);
+  --color-foreground: var(--text);
+  --color-muted-foreground: var(--text-2);
+  --color-subtle-foreground: var(--text-3);
+  --color-border: var(--line);
+  --color-border-strong: var(--line-strong);
+  --color-border-heavy: var(--line-heavy);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-text);
+  --color-ring: var(--focus);
+  --color-info: var(--info);
+  --color-success: var(--running);
+  --color-success-bg: var(--running-bg);
+  --color-warning: var(--degraded);
+  --color-warning-bg: var(--degraded-bg);
+  --color-destructive: var(--down);
+  --color-destructive-foreground: var(--down-text);
+  --color-destructive-bg: var(--down-bg);
+  --color-stopped: var(--stopped);
+  --color-chart-1: var(--series-1);
+  --color-chart-2: var(--series-2);
+  --color-chart-3: var(--series-3);
+  --color-chart-4: var(--series-4);
+  --color-chart-5: var(--series-5);
+
+  --font-sans: "Mona Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --radius-tag: 5px;
+  --radius-sm: 6px;
+  --radius-md: 7px;
+  --radius-lg: 10px;
+  --radius-xl: 12px;
+  --radius-2xl: 14px;
+
+  --shadow-pop: var(--pop);
+
+  --text-display: 24px;
+  --text-display--line-height: 32px;
+  --text-display--font-weight: 600;
+  --text-display--letter-spacing: -0.02em;
+  --text-section: 16px;
+  --text-section--line-height: 24px;
+  --text-section--font-weight: 600;
+  --text-body: 14px;
+  --text-body--line-height: 22px;
+  --text-body--font-weight: 450;
+  --text-label: 14px;
+  --text-label--line-height: 22px;
+  --text-label--font-weight: 550;
+  --text-meta: 13px;
+  --text-meta--line-height: 18px;
+  --text-meta--font-weight: 400;
+  --text-data: 13px;
+  --text-data--line-height: 22px;
+  --text-data--font-weight: 400;
+}
+
+:root {
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-panel: cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+@layer base {
+  * {
+    border-color: var(--line);
+  }
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 450;
+    font-feature-settings: "tnum";
+  }
+  ::selection {
+    background: rgba(122, 162, 255, 0.3);
+  }
+  :focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+  }
+  button {
+    cursor: pointer;
+  }
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--text-3);
+  }
+}
+
+@keyframes jlab-dialog-in {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes jlab-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes jlab-turn {
+  to { transform: rotate(360deg); }
+}
+.animate-dialog-in { animation: jlab-dialog-in 150ms var(--ease-out); }
+.animate-fade-in { animation: jlab-fade-in 150ms var(--ease-out); }
+.animate-turn { animation: jlab-turn 700ms linear infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+  .animate-turn { animation: none; }
+}
+
+/* Hover effects only on devices that really hover. */
+@custom-variant hover-capable (@media (hover: hover) and (pointer: fine));

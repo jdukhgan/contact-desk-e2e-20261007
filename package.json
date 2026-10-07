@@ -1,0 +1,10 @@
+{
+  "name": "jlab-contact-desk", "private": true, "type": "module",
+  "engines": {"node": ">=24.14.0"},
+  "scripts": {
+    "setup": "npm ci --prefix frontend",
+    "build": "npm run build --prefix frontend",
+    "start": "node server/index.mjs",
+    "test": "node --test tests/*.test.mjs && npm test --prefix frontend"
+  }
+}

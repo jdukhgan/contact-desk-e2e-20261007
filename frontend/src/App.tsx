@@ -1,8 +1,7 @@
 import { ContactDesk } from "@/components/contacts/contact-desk";
-import { useDemoController } from "@/demo/demo-controller";
+import { useContactController } from "@/api/use-contact-controller";
 
-// Builder: replace `useDemoController()` with the API-backed controller (same ContactDeskProps).
 export default function App() {
-  const controller = useDemoController();
+  const controller = useContactController();
   return <ContactDesk {...controller} />;
 }

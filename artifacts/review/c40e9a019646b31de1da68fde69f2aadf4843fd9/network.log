@@ -1,0 +1,7 @@
+1. [GET] http://127.0.0.1:3000/ => [200] OK
+2. [GET] http://127.0.0.1:3000/assets/index-CVy4mCgr.js => [200] OK
+3. [GET] http://127.0.0.1:3000/assets/index-CFGpk2la.css => [200] OK
+4. [GET] http://127.0.0.1:3000/api/contacts => [200] OK
+5. [GET] http://127.0.0.1:3000/api/owners => [200] OK
+6. [GET] http://127.0.0.1:3000/assets/MonaSans-Variable-BMVx8nn_.woff2 => [200] OK
+7. [GET] http://127.0.0.1:3000/assets/JetBrainsMono-Variable-B9CIFXIH.woff2 => [200] OK

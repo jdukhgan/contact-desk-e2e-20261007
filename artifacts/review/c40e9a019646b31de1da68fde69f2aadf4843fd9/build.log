@@ -1,0 +1,20 @@
+
+> build
+> npm run build --prefix frontend
+
+
+> contact-desk-frontend@0.1.0 build
+> tsc --noEmit && vite build
+
+vite v8.3.3 building client environment for production...
+transforming...
+✓ 1971 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                                      0.75 kB │ gzip:   0.41 kB
+dist/assets/JetBrainsMono-Variable-B9CIFXIH.woff2   40.40 kB
+dist/assets/MonaSans-Variable-BMVx8nn_.woff2        98.12 kB
+dist/assets/index-CFGpk2la.css                      22.89 kB │ gzip:   5.89 kB
+dist/assets/index-CVy4mCgr.js                      324.00 kB │ gzip: 101.67 kB
+
+✓ built in 147ms

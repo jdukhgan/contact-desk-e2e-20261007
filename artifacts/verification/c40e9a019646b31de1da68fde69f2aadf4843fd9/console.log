@@ -1,0 +1,6 @@
+Total messages: 0 (Errors: 0, Warnings: 0)
+Returning 3 messages for level "info"
+
+[ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:3000/api/contacts:0
+[ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:3000/api/contacts/6:0
+[ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:3000/api/contacts/6:0
